@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QFormLayout, QFrame,
     QHBoxLayout, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QSpacerItem, QStatusBar, QTabWidget,
-    QWidget)
+    QTextEdit, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -150,52 +150,55 @@ class Ui_MainWindow(object):
         self.frame_8.setFrameShadow(QFrame.Shadow.Raised)
         self.formLayout = QFormLayout(self.frame_8)
         self.formLayout.setObjectName(u"formLayout")
-        self.label_10 = QLabel(self.frame_8)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.formLayout.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_10)
-
-        self.label_13 = QLabel(self.frame_8)
-        self.label_13.setObjectName(u"label_13")
-        self.label_13.setFrameShape(QFrame.Shape.Box)
-        self.label_13.setLineWidth(4)
-
-        self.formLayout.setWidget(0, QFormLayout.ItemRole.FieldRole, self.label_13)
-
         self.verticalSpacer = QSpacerItem(661, 38, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.formLayout.setItem(1, QFormLayout.ItemRole.FieldRole, self.verticalSpacer)
-
-        self.label_11 = QLabel(self.frame_8)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_11)
-
-        self.label_14 = QLabel(self.frame_8)
-        self.label_14.setObjectName(u"label_14")
-        self.label_14.setFrameShape(QFrame.Shape.Box)
-        self.label_14.setLineWidth(4)
-
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.label_14)
+        self.formLayout.setItem(2, QFormLayout.ItemRole.FieldRole, self.verticalSpacer)
 
         self.verticalSpacer_2 = QSpacerItem(661, 38, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.formLayout.setItem(3, QFormLayout.ItemRole.FieldRole, self.verticalSpacer_2)
+        self.formLayout.setItem(9, QFormLayout.ItemRole.FieldRole, self.verticalSpacer_2)
+
+        self.textEdit_3 = QTextEdit(self.frame_8)
+        self.textEdit_3.setObjectName(u"textEdit_3")
+        self.textEdit_3.setAutoFillBackground(True)
+        self.textEdit_3.setFrameShape(QFrame.Shape.Box)
+        self.textEdit_3.setLineWidth(4)
+
+        self.formLayout.setWidget(8, QFormLayout.ItemRole.FieldRole, self.textEdit_3)
 
         self.label_12 = QLabel(self.frame_8)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setFrameShadow(QFrame.Shadow.Sunken)
 
-        self.formLayout.setWidget(4, QFormLayout.ItemRole.LabelRole, self.label_12)
+        self.formLayout.setWidget(8, QFormLayout.ItemRole.LabelRole, self.label_12)
 
-        self.label_15 = QLabel(self.frame_8)
-        self.label_15.setObjectName(u"label_15")
-        self.label_15.setFrameShape(QFrame.Shape.Box)
-        self.label_15.setLineWidth(4)
+        self.label_10 = QLabel(self.frame_8)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setFrameShadow(QFrame.Shadow.Sunken)
 
-        self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.label_15)
+        self.formLayout.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_10)
+
+        self.textEdit = QTextEdit(self.frame_8)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setAutoFillBackground(True)
+        self.textEdit.setFrameShape(QFrame.Shape.Box)
+        self.textEdit.setLineWidth(4)
+
+        self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.textEdit)
+
+        self.textEdit_2 = QTextEdit(self.frame_8)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.textEdit_2.setAutoFillBackground(True)
+        self.textEdit_2.setFrameShape(QFrame.Shape.Box)
+        self.textEdit_2.setLineWidth(4)
+
+        self.formLayout.setWidget(6, QFormLayout.ItemRole.FieldRole, self.textEdit_2)
+
+        self.label_11 = QLabel(self.frame_8)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.formLayout.setWidget(6, QFormLayout.ItemRole.LabelRole, self.label_11)
 
         self.label_16 = QLabel(self.Settingss)
         self.label_16.setObjectName(u"label_16")
@@ -242,12 +245,9 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">Vacuum Gauge</span></p></body></html>", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Home), QCoreApplication.translate("MainWindow", u"Home", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">RF Generator :</span></p></body></html>", None))
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">RF Generator :</span></p></body></html>", None))
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">RF Generator :</span></p></body></html>", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">RF Generator :</span></p></body></html>", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">RF Generator :</span></p></body></html>", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">Settings</span></p></body></html>", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Read ", None))
