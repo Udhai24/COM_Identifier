@@ -8,13 +8,18 @@ from main_ui import Ui_MainWindow  # Import the generated UI class
 global default_data
 global check_data
 global com_data
+global settings_data
 
 default_data={
     "RF": "955383335353511191C1",
     "AI": "",
     "Vacuum": ""
 }
-
+settings_data = {
+    "RF": "",
+    "AI": "",
+    "Vacuum": ""
+}
 check_data={
     "RF": "",
     "AI": "",
@@ -28,6 +33,8 @@ class MyApp(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)  # Apply the UI to this main window
         self.ui.pushButton.clicked.connect(self.find_btn_clicked)  # Connect the button click to a method
+        self.ui.pushButton_3.clicked.connect(self.read_json)
+        self.ui.pushButton_2.clicked.connect(self.write_json)
     
     def find_btn_clicked(self):
         # This function will be called when the button is clicked
@@ -84,6 +91,30 @@ class MyApp(QMainWindow):
                 self.ui.label_9.setText(f"{com_data[check_data['Vacuum']]}")
             else:
                 print("Device not found.")
+
+    def write_json(self):
+        # Write the current data to the JSON file
+        settings_data["RF"] = self.ui.textEdit.toPlainText()
+        settings_data["AI"] = self.ui.textEdit_2.toPlainText()
+        settings_data["Vacuum"] = self.ui.textEdit_3.toPlainText()
+        # settings_data["AI"] = self.ui.textEdit_2.text() 
+        # settings_data["Vacuum"] = self.ui.textEdit_3.text()
+        app_directory = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(app_directory, "data.json")
+        with open(file_path, "w") as file:
+            json.dump(settings_data, file)
+            print("Data written to JSON file.")
+
+    def read_json(self):
+        # Read the data from the JSON file
+        app_directory = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(app_directory, "data.json")
+        with open(file_path, "r") as file:
+            data = json.load(file)
+            print(data)
+            self.ui.textEdit.setText(data["RF"])
+            self.ui.textEdit_2.setText(data["AI"])
+            self.ui.textEdit_3.setText(data["Vacuum"])
 
 
 
