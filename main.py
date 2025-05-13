@@ -66,18 +66,24 @@ class MyApp(QMainWindow):
 
     def find_device(self):
         # This function will be called to find the device
-        if check_data["RF"] in com_data:
-            print(f"Device found: {check_data['RF']} on {com_data[check_data['RF']]}")
-        else:
-            print("Device not found.")
-        if check_data["AI"] in com_data:
-            print(f"Device found: {check_data['AI']} on {com_data[check_data['AI']]}")
-        else:
-            print("Device not found.")
-        if check_data["Vacuum"] in com_data:
-            print(f"Device found: {check_data['Vacuum']} on {com_data[check_data['Vacuum']]}")
-        else:
-            print("Device not found.")
+        if self.ui.checkBox.isChecked():
+            if check_data["RF"] in com_data:
+                print(f"Device found: {check_data['RF']} on {com_data[check_data['RF']]}")
+                self.ui.label_7.setText(f"{com_data[check_data['RF']]}")
+            else:
+                print("Device not found.")
+        if self.ui.checkBox_2.isChecked():
+            if check_data["AI"] in com_data:
+                print(f"Device found: {check_data['AI']} on {com_data[check_data['AI']]}")
+                self.ui.label_8.setText(f"{com_data[check_data['AI']]}")
+            else:
+                print("Device not found.")
+        if self.ui.checkBox_3.isChecked():
+            if check_data["Vacuum"] in com_data:
+                print(f"Device found: {check_data['Vacuum']} on {com_data[check_data['Vacuum']]}")
+                self.ui.label_9.setText(f"{com_data[check_data['Vacuum']]}")
+            else:
+                print("Device not found.")
 
 
 
